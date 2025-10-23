@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Birthday Wish</title>
@@ -49,20 +50,9 @@
         }
 
         @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10%, 90% { opacity: 0.8; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
         }
 
         .main-content {
@@ -87,21 +77,12 @@
             background: linear-gradient(45deg, #ff1744, #ff69b4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         @keyframes popIn {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         .birthday-title {
@@ -146,74 +127,11 @@
         }
 
         @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-
-        .countdown-container {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 10;
-            opacity: 1;
-            transition: all 0.5s ease;
-        }
-
-        .countdown-container.hide {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .countdown-number {
-            font-size: 120px;
-            font-weight: bold;
-            color: #fff;
-            text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-            background: linear-gradient(45deg, #ff1744, #ff69b4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: countdownPulse 1s ease-in-out;
-            font-family: 'Courier New', monospace;
-        }
-
-        .countdown-text {
-            font-size: 24px;
-            color: #fff;
-            margin-top: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        @keyframes countdownPulse {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         .reveal-button {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             background: linear-gradient(45deg, #ff1744, #ff69b4);
             color: white;
             border: none;
@@ -224,29 +142,19 @@
             cursor: pointer;
             box-shadow: 0 10px 30px rgba(255, 23, 68, 0.4);
             z-index: 5;
-            opacity: 0;
-            pointer-events: none;
+            opacity: 1;
             animation: buttonPulse 2s infinite;
             transition: all 0.3s ease;
         }
 
-        .reveal-button.show {
-            opacity: 1;
-            pointer-events: all;
-        }
-
         .reveal-button:hover {
-            transform: translate(-50%, -50%) scale(1.1);
+            transform: scale(1.1);
             box-shadow: 0 15px 40px rgba(255, 23, 68, 0.6);
         }
 
         @keyframes buttonPulse {
-            0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-                transform: translate(-50%, -50%) scale(1.05);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .sparkles {
@@ -270,39 +178,19 @@
             0%, 100% { opacity: 0; transform: scale(0); }
             50% { opacity: 1; transform: scale(1); }
         }
+  </style>
+</head>
+<body>
+  <div class="hearts-container" id="heartsContainer"></div>
+  <div class="sparkles" id="sparklesContainer"></div>
 
-        @media (max-width: 768px) {
-            .age-reveal {
-                font-size: 80px;
-            }
-            .birthday-title {
-                font-size: 32px;
-            }
-            .letter-container {
-                padding: 20px;
-                margin: 10px;
-            }
-            .letter-text {
-                font-size: 16px;
-            }
-        }
-    </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
- <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}</style></head>
- <body>
-  <div class="hearts-container" id="heartsContainer"><div class="heart" style="left: 5.3833%; animation-duration: 6.61366s; font-size: 21.0583px;">❤️</div><div class="heart" style="left: 67.7719%; animation-duration: 5.63259s; font-size: 18.0423px;">❤️</div><div class="heart" style="left: 1.33348%; animation-duration: 4.05794s; font-size: 19.2553px;">❤️</div><div class="heart" style="left: 58.3282%; animation-duration: 5.36316s; font-size: 24.1731px;">❤️</div><div class="heart" style="left: 57.1184%; animation-duration: 4.20444s; font-size: 18.9365px;">❤️</div><div class="heart" style="left: 76.3547%; animation-duration: 4.9773s; font-size: 21.898px;">❤️</div><div class="heart" style="left: 8.23585%; animation-duration: 4.82713s; font-size: 21.5588px;">❤️</div><div class="heart" style="left: 53.9725%; animation-duration: 6.55498s; font-size: 22.3757px;">❤️</div><div class="heart" style="left: 98.226%; animation-duration: 4.9146s; font-size: 23.0171px;">❤️</div><div class="heart" style="left: 67.0288%; animation-duration: 5.75663s; font-size: 22.3975px;">❤️</div><div class="heart" style="left: 57.3116%; animation-duration: 4.42581s; font-size: 21.4233px;">❤️</div><div class="heart" style="left: 12.0608%; animation-duration: 4.6184s; font-size: 21.8461px;">❤️</div><div class="heart" style="left: 83.8842%; animation-duration: 6.83681s; font-size: 19.6784px;">❤️</div><div class="heart" style="left: 12.8827%; animation-duration: 6.04611s; font-size: 16.1329px;">❤️</div></div>
-  <div class="sparkles" id="sparklesContainer"><div class="sparkle" style="left: 95.1825%; top: 68.6398%; animation-delay: 1.37949s;">✨</div><div class="sparkle" style="left: 80.3849%; top: 13.7538%; animation-delay: 0.0937946s;">✨</div><div class="sparkle" style="left: 89.8899%; top: 63.4646%; animation-delay: 1.3709s;">✨</div><div class="sparkle" style="left: 95.4074%; top: 94.3642%; animation-delay: 0.193874s;">✨</div></div>
-  <div class="countdown-container" id="countdownContainer">
-   <div class="countdown-number" id="countdownNumber" style="animation: 1s ease-in-out 0s 1 normal none running countdownPulse;">4:33:47</div>
-   <div class="countdown-text">Until midnight... Get ready for something special!</div>
-  </div>
-  <main class="main-content" style="opacity: 0;">
-   <div class="age-reveal" id="ageDisplay">22</div>
-   <h1 class="birthday-title">Happy Birthday <span id="recipientName">My Thangapulla</span>!</h1><button class="reveal-button" id="revealButton">💌 Reveal Your Letter 💌</button>
-   <div class="letter-container">
-    <p class="letter-text" id="letterText">Dear Thangapulla,
+  <main class="main-content">
+    <div class="age-reveal" id="ageDisplay">22</div>
+    <h1 class="birthday-title">Happy Birthday <span id="recipientName">My Thangapulla</span>!</h1>
+    <button class="reveal-button" id="revealButton">💌 Reveal Your Letter 💌</button>
+
+    <div class="letter-container">
+      <p class="letter-text" id="letterText">Dear Thangapulla,
 
 Wish you a very Happy Birthday, Ju Ju ❤✨🫂
 You are always so special to me, Thangoo. I just want you to be happy — with or without me. The universe will surely bless you with a beautiful life ✨🙌. I’ll always pray for your happiness, da.
@@ -324,143 +212,85 @@ I might wait for another 3–4 years, but forgetting those one-month snd night t
 Once again, wish you a very Happy Birthday, dear 🥰🫂
 So, where’s the party and treat, huh? 🥳
 Cheers 🍻 to your 22 years, Thangoo!
-I Love you so much Thangoo 💗 Miss you so much 🫂🤧</p>
-    <div class="signature" id="signatureText">With all my love, Your Bavi 🐣❤️</div>
-   </div>
+Love you so much 💗 Miss you so much 🫂🤧
+
+</p>
+      <div class="signature" id="signatureText">With all my love, Your Bavi 🐣❤️</div>
+    </div>
   </main>
+
   <script>
-        const defaultConfig = {
-            birthday_age: "22",
-            recipient_name: "My Thangapulla",
-            love_letter: "Dear Thangapulla,
-            Wish you a very Happy Birthday, Ju Ju ❤✨🫂
-            You are always so special to me, Thangoo. I just want you to be happy — with or without me. The universe will surely bless you with a beautiful life ✨🙌. I’ll always pray for your happiness, da.
-            Remember, I’ll always be there for you — whenever you need me, you can come to me. You made me smile, you made me cry, you made me feel broken, and yet you also made me feel special 😊. I was truly happy with you.
-            If I could, I’d delete the part of our story where I fell. I’m happy now, daa — but if you had stayed in my life completely, it would’ve been even more beautiful. Maybe I just don’t have that much luck 🫠.
-            I lived a beautiful, imaginary life with you ❤. I’ve never felt this way for anyone else, and I believe someday all these feelings will settle. I’ll never forget you — you’ll always be a special part of my life.
-            You might say we never met even once, and yes, that’s true. But the comfort and care you gave me — I loved that, daa ☺. I’ll never force you to be with me. Some day I may become someone else’s “property,” and you’ll soon belong to your gorgeous girlfriend — the one you love the most in this world 🌎❤‍🩹.
-            My husband will come soon 🥺, so I won’t disturb you or ask you to love me again. I never had a good family, friends, or siblings — I’ve always been lonely 🙁. Everyone has hurt me in some way, and I’ve never really been pampered 😔. My mother loves me a lot, but… you already know everything. I’m okay only, daa.
-            Still, I have 2 more years to go. Let you be the first and last person I chose to love ❤. From now, I’ll let my family choose my partner — because whenever I choose, it turns out wrong, just like us 🤕.
-            I might wait for another 3–4 years, but forgetting those one-month snd night talks will be really hard for me 🥲. Maybe it’s easy for you, but not for me. I never got my father’s love 💔, and since childhood, I’ve always been that lonely person 😔. But it’s okay — everything is my karma.
-            Once again, wish you a very Happy Birthday, dear 🥰🫂
-            So, where’s the party and treat, huh? 🥳
-            Cheers 🍻 to your 22 years, Thangoo!
-            I Love you so much Thangoo 💗 Miss you so much 🫂🤧",
-            signature: "With all my love, Your Bavi 🐣❤️"
-        };
+    const defaultConfig = {
+      birthday_age: "22",
+      recipient_name: "My Thangapulla",
+      love_letter: "Dear Thangapulla,
 
-        // Create floating hearts
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + '%';
-            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
-            heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
-            document.getElementById('heartsContainer').appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 7000);
-        }
+Wish you a very Happy Birthday, Ju Ju ❤✨🫂
+You are always so special to me, Thangoo. I just want you to be happy — with or without me. The universe will surely bless you with a beautiful life ✨🙌. I’ll always pray for your happiness, da.
 
-        // Create sparkles
-        function createSparkle() {
-            const sparkle = document.createElement('div');
-            sparkle.className = 'sparkle';
-            sparkle.innerHTML = '✨';
-            sparkle.style.left = Math.random() * 100 + '%';
-            sparkle.style.top = Math.random() * 100 + '%';
-            sparkle.style.animationDelay = Math.random() * 2 + 's';
-            document.getElementById('sparklesContainer').appendChild(sparkle);
-            
-            setTimeout(() => {
-                sparkle.remove();
-            }, 3000);
-        }
+Remember, I’ll always be there for you — whenever you need me, you can come to me. You made me smile, you made me cry, you made me feel broken, and yet you also made me feel special 😊. I was truly happy with you.
 
-        // Start animations
-        setInterval(createHeart, 500);
-        setInterval(createSparkle, 800);
+If I could, I’d delete the part of our story where I fell. I’m happy now, daa — but if you had stayed in my life completely, it would’ve been even more beautiful. Maybe I just don’t have that much luck 🫠.
 
-        // Real-time countdown to midnight
-       
+I lived a beautiful, imaginary life with you ❤. I’ve never felt this way for anyone else, and I believe someday all these feelings will settle. I’ll never forget you — you’ll always be a special part of my life.
 
-        // Reveal letter function
-        function revealLetter() {
-            const letterContainer = document.querySelector('.letter-container');
-            const revealButton = document.getElementById('revealButton');
-            const mainContent = document.querySelector('.main-content');
-            
-            revealButton.style.opacity = '0';
-            revealButton.style.pointerEvents = 'none';
-            
-            // Show main content first
-            mainContent.style.opacity = '1';
-            
-            // Then show letter after age animation
-            setTimeout(() => {
-                letterContainer.classList.add('show');
-            }, 3000);
-        }
+You might say we never met even once, and yes, that’s true. But the comfort and care you gave me — I loved that, daa ☺. I’ll never force you to be with me. Some day I may become someone else’s “property,” and you’ll soon belong to your gorgeous girlfriend — the one you love the most in this world 🌎❤‍🩹.
 
-        // Start the countdown when page loads
-        startCountdown();
+My husband will come soon 🥺, so I won’t disturb you or ask you to love me again. I never had a good family, friends, or siblings — I’ve always been lonely 🙁. Everyone has hurt me in some way, and I’ve never really been pampered 😔. My mother loves me a lot, but… you already know everything. I’m okay only, daa.
 
-        // Add click event to reveal button
-        document.getElementById('revealButton').addEventListener('click', revealLetter);
+Still, I have 2 more years to go. Let you be the first and last person I chose to love ❤. From now, I’ll let my family choose my partner — because whenever I choose, it turns out wrong, just like us 🤕.
 
-        async function render(config) {
-            const ageDisplay = document.getElementById('ageDisplay');
-            const recipientName = document.getElementById('recipientName');
-            const letterText = document.getElementById('letterText');
-            const signatureText = document.getElementById('signatureText');
+I might wait for another 3–4 years, but forgetting those one-month snd night talks will be really hard for me 🥲. Maybe it’s easy for you, but not for me. I never got my father’s love 💔, and since childhood, I’ve always been that lonely person 😔. But it’s okay — everything is my karma.
 
-            if (ageDisplay) {
-                ageDisplay.textContent = config.birthday_age || defaultConfig.birthday_age;
-            }
-            if (recipientName) {
-                recipientName.textContent = config.recipient_name || defaultConfig.recipient_name;
-            }
-            if (letterText) {
-                letterText.textContent = config.love_letter || defaultConfig.love_letter;
-            }
-            if (signatureText) {
-                signatureText.textContent = config.signature || defaultConfig.signature;
-            }
-        }
+Once again, wish you a very Happy Birthday, dear 🥰🫂
+So, where’s the party and treat, huh? 🥳
+Cheers 🍻 to your 22 years, Thangoo!
+Love you so much 💗 Miss you so much 🫂🤧
 
-        function mapToCapabilities(config) {
-            return {
-                recolorables: [],
-                borderables: [],
-                fontEditable: undefined,
-                fontSizeable: undefined
-            };
-        }
+",
+      signature: "With all my love, Your Bavi 🐣❤️"
+    };
 
-        function mapToEditPanelValues(config) {
-            return new Map([
-                ["birthday_age", config.birthday_age || defaultConfig.birthday_age],
-                ["recipient_name", config.recipient_name || defaultConfig.recipient_name],
-                ["love_letter", config.love_letter || defaultConfig.love_letter],
-                ["signature", config.signature || defaultConfig.signature]
-            ]);
-        }
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+      document.getElementById('heartsContainer').appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
 
-        // Initialize SDK when available
-        if (window.elementSdk) {
-            window.elementSdk.init({
-                defaultConfig,
-                render,
-                mapToCapabilities,
-                mapToEditPanelValues
-            });
-        }
+    // Sparkles
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      sparkle.innerHTML = '✨';
+      sparkle.style.left = Math.random() * 100 + '%';
+      sparkle.style.top = Math.random() * 100 + '%';
+      sparkle.style.animationDelay = Math.random() * 2 + 's';
+      document.getElementById('sparklesContainer').appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 3000);
+    }
 
-        // Initial render
-        render(defaultConfig);
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9931b625e7d63aab',t:'MTc2MTIyNzUxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
- <script src="script.js"></script>
-</body></html>
+    setInterval(createHeart, 500);
+    setInterval(createSparkle, 800);
+
+    // Reveal letter
+    document.getElementById('revealButton').addEventListener('click', () => {
+      document.querySelector('.letter-container').classList.add('show');
+    });
+
+    function render(config) {
+      document.getElementById('ageDisplay').textContent = config.birthday_age;
+      document.getElementById('recipientName').textContent = config.recipient_name;
+      document.getElementById('letterText').textContent = config.love_letter;
+      document.getElementById('signatureText').textContent = config.signature;
+    }
+
+    render(defaultConfig);
+  </script>
+</body>
+</html>
